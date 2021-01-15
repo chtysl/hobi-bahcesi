@@ -5,7 +5,6 @@
         <nuxt-link to="/"><AppLogo /></nuxt-link>
       </li>
       <li><nuxt-link to="/tarlalar">Tarlalar</nuxt-link></li>
-      <li><nuxt-link to="/hakkimizda">Hakkımızda</nuxt-link></li>
       <li><nuxt-link to="/sepet">Sepet</nuxt-link></li>
     </ul>
   </nav>

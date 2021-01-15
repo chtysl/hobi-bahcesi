@@ -15,16 +15,27 @@
           <td>{{ tarla.tarlaFiyat }}</td>
         </tr>
       </tbody>
+      <tr class="mt-2">
+        <td>Toplam fiyat: {{ toplamFiyat }}</td>
+      </tr>
     </table>
+    <AppSiparisForm />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-
+import AppSiparisForm from '@/components/AppSiparisForm.vue'
 export default {
+  components: {
+    AppSiparisForm,
+  },
   computed: {
     ...mapState(['sepet']),
+    toplamFiyat() {
+      if (!this.sepet.length) return 0
+      return this.sepet.reduce((acc, next) => acc + +next.tarlaFiyat, 0)
+    },
   },
 }
 </script>
